@@ -1,0 +1,41 @@
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@fractlfinance" />
+    <meta name="twitter:creator" content="@fractlfinance">
+    <meta name="twitter:title" content="Fractl">
+    <meta name="twitter:description" content="Fractl is the gateway to the best yields on DeFi">
+    <meta name="twitter:image" content="http://fractl.finance/twitter-card.png">
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--accent: 124, 58, 237;
+		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+	}
+	html {
+		font-family: Futura, system-ui, sans-serif;
+		background-color: #35406A;
+		color: white;
+	}
+	a, a:visited {
+		color: powderblue;
+	}
+</style>
